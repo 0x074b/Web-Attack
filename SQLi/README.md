@@ -1,4 +1,4 @@
-# Database recovering
+# SQLi
 SQL injections are generally considered critical because they allow:
 - Retrieve (or even modify) the contents of the database, including usernames, passwords, or their hashes.
 - To take control of the server (via a RCE, or "Remote Code Execution"), depending on the database engine used (MySQL, Oracle, MS SQL)
