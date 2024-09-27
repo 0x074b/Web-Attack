@@ -1,12 +1,24 @@
-# CSRF
+# Table of Contents
+- [Definition](#definition)
+- [Prerequisites](#prerequisites)
+- [Defences Bypass](#defences-bypass)
+   * [From POST to GET](#from-post-to-get)
+   * [Lack of token](#lack-of-token)
+   * [Token not tied to the user session](#token-not-tied-to-the-user-session)
+   * [Method bypass](#method-bypass)
+   * [Custom header token bypass](#custom-header-token-bypass)
+   * [CSRF token is verified by a cookie](#csrf-token-is-verified-by-a-cookie)
+   * [Content-Type change](#content-type-change)
+
+# Definition
 Cross-Site Request Forgery (CSRF) is a type of security vulnerability found in web applications. It enables attackers to perform actions on behalf of unsuspecting users by exploiting their authenticated sessions. The attack is executed when a user, who is logged into a victim's platform, visits a malicious site. This site then triggers requests to the victim's account through methods like executing JavaScript, submitting forms, or fetching images.
 
 # Prerequisites
 To exploit a CSRF vulnerability, several conditions must be met:
 
--Identify a Valuable Action: The attacker needs to find an action worth exploiting, such as changing the user's password, email, or elevating privileges.
--Session Management: The user's session should be managed solely through cookies or the HTTP Basic Authentication header, as other headers cannot be manipulated for this purpose.
--Absence of Unpredictable Parameters: The request should not contain unpredictable parameters, as they can prevent the attack.
+- Identify a Valuable Action: The attacker needs to find an action worth exploiting, such as changing the user's password, email, or elevating privileges.
+- Session Management: The user's session should be managed solely through cookies or the HTTP Basic Authentication header, as other headers cannot be manipulated for this purpose.
+- Absence of Unpredictable Parameters: The request should not contain unpredictable parameters, as they can prevent the attack.
 
 # Defences Bypass
 
